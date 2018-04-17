@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="aula4.Obesidade"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.security.GeneralSecurityException"/>
+    <fullyQualifiedTypeName name="RolaDados"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javax.xml.crypto.dsig.spec.ExcC14NParameterSpec"/>
+    <fullyQualifiedTypeName name="EntradaTeclado"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="aula7.ContaPoupanca"/>
+    <fullyQualifiedTypeName name="aula7.ContaBancaria"/>
+    <fullyQualifiedTypeName name="aula7.ContaEspecial"/>
+    <fullyQualifiedTypeName name="aula8.EntradaTeclado"/>
+    <fullyQualifiedTypeName name="aula8.PessoaFisica"/>
+    <fullyQualifiedTypeName name="aula8.PessoaJuridica"/>
+    <fullyQualifiedTypeName name="aula7.PoupancaSimples"/>
+    <fullyQualifiedTypeName name="exercicioFuncionario.Gerente"/>
+    <fullyQualifiedTypeName name="exercicioFuncionario.Funcionarios"/>
+    <fullyQualifiedTypeName name="exercicioFuncionario.Teste"/>
+    <fullyQualifiedTypeName name="exercicioFuncionario.EntradaTeclado"/>
+    <fullyQualifiedTypeName name="exercicioFuncionario.Assistente"/>
+    <fullyQualifiedTypeName name="Dados.RolaDados"/>
+    <fullyQualifiedTypeName name="Excecao.BozoException"/>
+    <fullyQualifiedTypeName name="java.security.Principal"/>
+    <fullyQualifiedTypeName name="Principal.Placar"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.After"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,108 @@
+package Principal;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class PlacarTest {
+	
+	private Placar pl;
+
+	@Before
+	public void setUp() throws Exception {
+		pl = new Placar();
+	}
+	
+	@After
+	public void tearDown() {
+		pl = null;
+	}
+	
+	
+	@Test
+	public void test1() {
+		Placar pl = new Placar();
+		pl.add(1, new int[] {1, 2, 3, 4, 5} );
+		pl.add(2, new int[] {1, 2, 3, 4, 5} );
+		pl.add(3, new int[] {1, 2, 3, 4, 5} );
+		pl.add(4, new int[] {1, 2, 3, 4, 5} );
+		pl.add(5, new int[] {1, 2, 3, 4, 5} );
+		pl.add(6, new int[] {2, 2, 3, 4, 2} );
+		pl.add(7, new int[] {2, 2, 3, 4, 2} );
+		pl.add(8, new int[] {1, 2, 3, 4, 5} );
+		pl.add(9, new int[] {1, 1, 1, 1, 5} );
+		pl.add(10, new int[] {1, 2, 3, 4, 5} );
+		int k = pl.getScore();
+		assertEquals(65, k);
+	}
+	
+	@Test
+	public void test2() {
+		Placar pl = new Placar();
+		pl.add(1, new int[] {2, 3, 4, 5, 2} );
+		pl.add(2, new int[] {3, 3, 3, 5, 5} );
+		pl.add(3, new int[] {6, 5, 5, 6, 6} );
+		pl.add(4, new int[] {2, 2, 3, 2, 3} );
+		pl.add(5, new int[] {3, 3, 3, 4, 4} );
+		pl.add(6, new int[] {4, 4, 3, 3, 3} );
+		pl.add(7, new int[] {2, 2, 4, 2, 4} );
+		pl.add(8, new int[] {3, 2, 4, 5, 6} );
+		pl.add(9, new int[] {4, 4, 4, 5, 4} );
+		pl.add(10, new int[] {2, 3, 4, 5, 6} );
+		int k = pl.getScore();
+		assertEquals(65, k);
+	}
+	
+	@Test
+	public void test3() {
+		Placar pl = new Placar();
+		pl.add(1, new int[] {2, 3, 4, 5, 2} );
+		pl.add(2, new int[] {3, 3, 3, 5, 5} );
+		pl.add(3, new int[] {6, 5, 5, 6, 6} );
+		pl.add(4, new int[] {2, 2, 3, 2, 3} );
+		pl.add(5, new int[] {3, 3, 3, 4, 4} );
+		pl.add(6, new int[] {4, 4, 3, 3, 3} );
+		pl.add(7, new int[] {1, 2, 1, 2, 4} );
+		pl.add(8, new int[] {3, 3, 4, 5, 4} );
+		pl.add(9, new int[] {5, 5, 4, 5, 5} );
+		pl.add(11, new int[] {2, 3, 4, 5, 6} );
+		int k = pl.getScore();
+		assertEquals(30, k);
+	}
+	
+	@Test
+	public void test3() {
+		Placar pl = new Placar();
+		pl.add(1, new int[] {2, 3, 4, 5, 2} );
+		pl.add(2, new int[] {3, 3, 3, 5, 5} );
+		pl.add(3, new int[] {6, 5, 5, 6, 6} );
+		pl.add(4, new int[] {2, 2, 3, 2, 3} );
+		pl.add(5, new int[] {3, 3, 3, 4, 4} );
+		pl.add(6, new int[] {4, 4, 3, 3, 3} );
+		pl.add(7, new int[] {1, 2, 1, 2, 4} );
+		pl.add(8, new int[] {3, 3, 4, 5, 4} );
+		pl.add(9, new int[] {5, 4, 5, 5, 5} );
+		pl.add(11, new int[] {2, 3, 4, 5, 6} );
+		int k = pl.getScore();
+		assertEquals(30, k);
+	}
+
+	/*@Test
+	public void testAdd() {
+		fail("Not yet implemented");
+	}*/
+
+	@Test
+	public void testGetScoreVazio(){
+		int k = pl.getScore();
+		assertEquals(0, k);
+	}
+
+	/*@Test
+	public void testToString() {
+		fail("Not yet implemented");
+	}*/
+
+}
