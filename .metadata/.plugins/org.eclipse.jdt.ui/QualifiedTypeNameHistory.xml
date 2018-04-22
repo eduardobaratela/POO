@@ -5,10 +5,8 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.security.GeneralSecurityException"/>
     <fullyQualifiedTypeName name="RolaDados"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="javax.xml.crypto.dsig.spec.ExcC14NParameterSpec"/>
     <fullyQualifiedTypeName name="EntradaTeclado"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="aula7.ContaPoupanca"/>
     <fullyQualifiedTypeName name="aula7.ContaBancaria"/>
     <fullyQualifiedTypeName name="aula7.ContaEspecial"/>
@@ -26,5 +24,12 @@
     <fullyQualifiedTypeName name="java.security.Principal"/>
     <fullyQualifiedTypeName name="Principal.Placar"/>
     <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="Dicionario"/>
     <fullyQualifiedTypeName name="org.junit.After"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="ChainCodes.EntradaTeclado"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
