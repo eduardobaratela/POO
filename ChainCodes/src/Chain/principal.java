@@ -3,7 +3,7 @@ import java.io.IOException;
 
 /**
  * Classe principal que chama as funcoes e printa os dados
- * @author eduar
+ * @author eduardo alves baratela
  *
  */
 public class principal {
