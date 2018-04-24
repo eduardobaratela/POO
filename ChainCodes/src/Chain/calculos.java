@@ -1,8 +1,15 @@
+package Chain;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
+/**
+ * Classe que possui todas as funcoes de calculos de medida
+ * @author eduardo alves baratela
+ *
+ */
 public class calculos {
 	
 	private BufferedImage image;
@@ -13,6 +20,11 @@ public class calculos {
 	private double perimetro;
 	private int[] ultimo = new int[2];
 	
+	/**
+	 * Funcao que inicializa o programa lendo o arquivo de imagem
+	 * @param s eh a string que contem o nome do arquivo de imagem
+	 * @throws IOException
+	 */
 	public void leImagem(String s) throws IOException {	
 		File inFile = new File(s);
 		image = ImageIO.read(inFile);
@@ -20,6 +32,9 @@ public class calculos {
 		
 	}
 	
+	/**
+	 * Funcao que zera o vetor auxiliar de pixels visitados
+	 */
 	public void zeraVisitado() {
 		
 		this.visitado = new int[this.maxY][this.maxX];
@@ -31,15 +46,22 @@ public class calculos {
 		}
 	}
 	
-	public void printa() {
+	/*/**
+	 * Funcao auxiliar que printa a imagem em RGB
+	 */
+	/*public void printa() {
 		for (int i = 0;  i < getmaxY(); i++) {
 			for (int j = 0; j < getmaxX(); j++) {
 				System.out.print(image.getRGB(j, i));
 			}
 			System.out.println("\n");
 		}
-	}
+	}*/
 	
+	/**
+	 * Funcao que da o tamanho da altura do aquivo de imagem
+	 * @return retorna uma variavel que possui a altura do aquivo de imagem
+	 */
 	public int getmaxY() {
 		
 		maxY =  image.getHeight();
@@ -47,6 +69,10 @@ public class calculos {
 		return maxY;
 	}
 	
+	/**
+	 * Funcao que da o tamanho da largura do aquivo de imagem
+	 * @return retorna uma variavel que possui a largura do arquivo de imagem
+	 */
 	public int getmaxX() {
 		
 		this.maxX = image.getWidth();
@@ -55,6 +81,10 @@ public class calculos {
 		
 	}
 	
+	/**
+	 * Da o primeiro ponto da imagem
+	 * @return um vetor com as cordenadas do ponto
+	 */
 	public int[] getPtoMin(){
 		boolean flag = false;
 		this.maxX = getmaxX();
@@ -72,6 +102,10 @@ public class calculos {
 		return ptoMin;
 	}
 	
+	/**
+	 * Da o ultimo ponto da imagem
+	 * @return um vetor com as cordenadas do ponto
+	 */
 	public int[] getPtoMax(){
 		boolean flag = false;
 		this.maxX = getmaxX();
@@ -85,15 +119,22 @@ public class calculos {
 				}
 			}
 		}
-		
 		return ptoMax;
 	}
 	
+	/**
+	 * Funcao que da a altura da imagem, do ponto mais alto até o ponto mais baixo
+	 * @return uma variavel com esse valor
+	 */
 	public int getAltura() {
 		int height = this.ptoMax[0] - this.ptoMin[0] + 1;
 		return height;
 	}
 	
+	/**
+	 * Funcao que da a largura da imagem, do ponto mais a esquerda até o ponto mais a direita
+	 * @return uma variavel com esse valor
+	 */
 	public int getLargura() {
 		int width = 0, cont = 0;
 		
@@ -109,6 +150,12 @@ public class calculos {
 		return width;
 	}
 	
+	/**
+	 * Funcao que checa se o pixel eh preto e contem vizinhos brancos, ou seja, se ele pertence a borda
+	 * @param i coordenada y
+	 * @param j coordenada x
+	 * @return se pertence ou nao a borda
+	 */
 	public boolean checaBorda(int i, int j) {
 		
 		if (image.getRGB(j, i) == -1) return false;
@@ -125,6 +172,10 @@ public class calculos {
 		return false;
 	}
 	
+	/**
+	 * Funcao que retorna a quantidade de pixels que a borda da imagem possui
+	 * @return a variavel com o valor de pixels na borda
+	 */
 	public int borda() {
 		int edge = 0;
 		
@@ -138,6 +189,12 @@ public class calculos {
 		return edge;
 	}
 	
+	/**
+	 * Acha, a partir de um pixel da borda, seu vizinho tambem pertencente a borda
+	 * @param i coordenada do pixel em y
+	 * @param j coordenada do pixel em x
+	 * @return um vetor com as coordenadas do vizinho
+	 */
 	public int[] achaVizinho(int i, int j) {
 		int aux[] = new int[2];	//aux[0] = i   / aux[1] = j
 		
@@ -217,6 +274,12 @@ public class calculos {
     	return aux;
 	}
 	
+	/**
+	 * Calcula recursivamente o perimetro da imagem através da distancia entre os pontos vizinhos da borda
+	 * @param i coordenadas em y
+	 * @param j coordenadas em x
+	 * @return o valor do perimetro da imagem
+	 */
 	public double calculaPerimetro(int i, int j) {
 		int[] vizinho = new int[2];
 		
@@ -226,7 +289,7 @@ public class calculos {
 		if (this.visitado[vizinho[0]][vizinho[1]] == 0)
 			calculaPerimetro(vizinho[0], vizinho[1]);		
 		
-		if(i == ptoMin[0] && j == ptoMin[1]) {
+		if(i == ptoMin[0] && j == ptoMin[1]) {		//soma a distancia do ultimo ponto com o primeiro ponto da borda
 			if(i == this.ultimo[0] || j == this.ultimo[1])
 				this.perimetro++;
 			else this.perimetro += Math.sqrt(2);

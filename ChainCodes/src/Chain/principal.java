@@ -1,8 +1,18 @@
+package Chain;
 import java.io.IOException;
 
+/**
+ * Classe principal que chama as funcoes e printa os dados
+ * @author eduar
+ *
+ */
 public class principal {
 	
-	
+	/**
+	 * Funcao main do programa que printa todas as informacoes
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		calculos m = new calculos();
 		int[] ptoMin = new int[2];
