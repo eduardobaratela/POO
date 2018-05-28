@@ -5,7 +5,7 @@ package aula7;
  * @author delamaro
  *
  */
-public abstract class ContaBancaria {
+public abstract class ContaBancaria implements Comparable<ContaBancaria>{
 
 	private String nomeCliente;
 	private int numConta;
@@ -72,5 +72,15 @@ public abstract class ContaBancaria {
 	}
 	
 	public abstract void atualiza(double taxa); 
+	
+	@Override
+	public int compareTo(ContaBancaria b) {
+		double x = this.getSaldo();
+		double y = b.getSaldo();
+		if ( x == y ) return 0;
+		if ( x < y ) return -1;
+		return 1;
+	}
+
 
 }

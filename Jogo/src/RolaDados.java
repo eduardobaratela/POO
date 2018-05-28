@@ -1,5 +1,3 @@
-package Dados;
-
 /**
  * Essa é uma classe auxiliar que permite gerencia um conjunto de vários dados simultaneamente. 
  * Operações como rolar alguns dos dados ou exibir o resultado de todos eles, são implementadas.
@@ -66,17 +64,29 @@ public class RolaDados {
 	 * @return Retorna o valor de cada um dos dados, inclusive os que não foram rolados. Nesse caso, o valor retornado
 	 *  é o valor anterior que ele já possuia.
 	 */
-	public int[] rolar(java.lang.String s) {
-		
-		String[] aux = new String[5];
-		for (int i = 0; i < aux.length; i++) {
-			aux = s.split(" ");
-		}
-		
-		for (int i = 0; i < aux.length; i++) {
-			result[Integer.parseInt(aux[i]) - 1] = dados[Integer.parseInt(aux[i]) - 1].rolar();
+	public int[] rolar(String s) {
+				
+		for (int i = 0; i < s.length(); i++) {
+			int aux = Character.getNumericValue(s.charAt(i));
+			if(aux == 1) result[i] = dados[i].rolar();
 		}		
 		
+		return result;
+	}
+	
+	public String toNumbers(){
+		String array = new String();
+		for(int i = 0; i < 5; i ++){
+			array += result[i];
+			array += " ";
+		}
+		return array;
+	} 
+	
+	public int[] getResult() {
+		for(int i = 0; i < 5; i++) {
+			result[i] = dados[i].getLado();
+		}
 		return result;
 	}
 	

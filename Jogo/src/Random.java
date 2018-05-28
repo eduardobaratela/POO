@@ -1,4 +1,3 @@
-package Dados;
 import java.util.Calendar;
 /**
  * Gerador simples de números aleatórios.

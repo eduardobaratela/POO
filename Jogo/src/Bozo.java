@@ -1,6 +1,4 @@
-package Principal;
 import java.io.IOException;
-import Dados.RolaDados;
 
 /**
  * Essa é a classe inicial do programa Bozó. Possui apenas o método main, que cuida da execução do jogo.
@@ -20,7 +18,6 @@ public class Bozo {
 		RolaDados rd = new RolaDados();
 		Placar p = new Placar();
 		int[] result = new int[5];
-		
 		while(i<10){
 			p.toString();
 			

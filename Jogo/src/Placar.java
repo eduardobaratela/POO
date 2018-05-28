@@ -1,4 +1,3 @@
-package Principal;
 /**
  * Esta classe representa o placar de um jogo de Bozó. Permite que combinações de dados sejam alocadas às posições e mantém o escore de um jogador.
  */
@@ -30,7 +29,7 @@ public class Placar {
 				}
 				resultado[posicao - 1] = cont;
 			}
-			else if(posicao == 7 && resultado[posicao - 1] == -1){//Full House
+			else if(posicao == 7 && resultado[posicao - 1] == -1){
 				int[] contFull = new int[6];
 				for (int i = 0; i < contFull.length; i++) {
 					contFull[i] = 0;
@@ -41,11 +40,14 @@ public class Placar {
 				if(contFull[0] == 3 || contFull[1] == 3 || contFull[2] == 3 || contFull[3] == 3 || contFull[4] == 3) {
 					if(contFull[0] == 2 || contFull[1] == 2 || contFull[2] == 2 || contFull[3] == 2 || contFull[4] == 2)
 						resultado[6] = 15;
-					else System.out.println("Nao eh um full hand");
+					else {
+						//System.out.println("Nao eh um full hand");
+						resultado[6] =0;
+					}
 				}
 				else {
-					System.out.println("Nao eh um full hand");
-					resultado[6] = 0;
+					//System.out.println("Nao eh um full hand");
+					resultado[6] =0;;
 				}
 			}
 			else if(posicao == 8 && resultado[posicao - 1] == -1){//Sequencia
@@ -63,7 +65,10 @@ public class Placar {
 								if(dados[0]==6 || dados[1]==6 || dados[2]==6 || dados[3]==6 || dados[4]==6)	
 									resultado[7]=20;
 				}
-				//else System.out.println("Nao eh uma Sequencia");
+				else {
+					//System.out.println("Nao eh uma Sequencia");
+					resultado[7] =0;
+				}
 			}
 			else if(posicao == 9 && resultado[posicao - 1] == -1){//Quadra
 				if(dados[0] == dados[1] && dados[0] == dados[2] && dados[0] == dados[3] && dados[0] != dados[4])
@@ -76,14 +81,17 @@ public class Placar {
 					resultado[8] = 30;
 				else if(dados[4] == dados[0] && dados[4] == dados[1] && dados[4] == dados[2] && dados[4] != dados[3]) 
 					resultado[8] = 30;
-				else System.out.println("Nao eh uma quadra");
+				else {
+					//System.out.println("Nao eh uma quadra");
+					resultado[8] =0;
+				}
 			}
 			else if(posicao == 10 && resultado[posicao - 1] == -1){//Quina
 				if(dados[0] == dados[1] && dados[0] == dados[2] && dados[0] == dados[3] && dados[0] == dados[4])
 					resultado[9]= 40;
 				else {
-					System.out.println("Nao eh uma quina");
-					resultado[9] = 0;
+					//System.out.println("Nao eh uma quina");
+					resultado[9] =0;
 				}
 			}
 			else {
@@ -122,34 +130,31 @@ public class Placar {
 	mostra as posições 8 (sequencia) e 9 (quadra) ocupadas.
 	 */
 	public java.lang.String toString(){
+		if(resultado[0] == -1) System.out.print("  (1)  |");
+		else System.out.print("  " + resultado[0] + "  |");
+		if(resultado[6] == -1) System.out.print("  (7)  |");
+		else System.out.print("  " + resultado[6] + "  |");
+		if(resultado[3] == -1) System.out.println("  (4)  |");
+		else System.out.println("  " + resultado[3] + "  |");
+		System.out.print("------------------------\n");
+		if(resultado[1] == -1) System.out.print("  (2)  |");
+		else System.out.print("  " + resultado[1] + "  |");
+		if(resultado[7] == -1) System.out.print("  (8)  |");
+		else System.out.print("  " + resultado[7] + "  |");
+		if(resultado[4] == -1) System.out.println("  (5)  |");
+		else System.out.println("  " + resultado[4] + "  |");
+		System.out.print("------------------------\n");
+		if(resultado[2] == -1) System.out.print("  (3)  |");
+		else System.out.print("  " + resultado[2] + "  |");
+		if(resultado[8] == -1) System.out.print("  (9)  |");
+		else System.out.print("  " + resultado[8] + "  |");
+		if(resultado[5] == -1) System.out.println("  (6)  |");
+		else System.out.println("  " + resultado[5] + "  |");
+		System.out.print("------------------------\n");
+		if(resultado[9] == -1) System.out.println("       |  (10)  |       ");
+		else System.out.println("       |"  + "  " + resultado[9] + "   " +  "|   ");
+		System.out.print("       x-------x        \n");
 		
-		String resp = "";
-		
-		if(resultado[0] == -1) resp += ("  (1)  |");
-		else resp += ("   " + resultado[0] + "   |");
-		if(resultado[6] == -1) resp += ("  (7)  |");
-		else resp += ("  " + resultado[6] + "   |");
-		if(resultado[3] == -1) resp += ("  (4)  |");
-		else resp += ("  " + resultado[3] + "   |");
-		resp += ("\n------------------------\n");
-		if(resultado[1] == -1) resp += ("  (2)  |");
-		else resp += ("   " + resultado[1] + "   |");
-		if(resultado[7] == -1) resp += ("  (8)  |");
-		else resp += ("  " + resultado[7] + "   |");
-		if(resultado[4] == -1) resp += ("  (5)  |");
-		else resp += ("  " + resultado[4] + "   |");
-		resp += ("\n------------------------\n");
-		if(resultado[2] == -1) resp += ("  (3)  |");
-		else resp += ("  " + resultado[2] + "   |");
-		if(resultado[8] == -1) resp += ("  (9)  |");
-		else resp += ("  " + resultado[8] + "   |");
-		if(resultado[5] == -1) resp += ("  (6)  |");
-		else resp += ("  " + resultado[5] + "   |");
-		resp += ("\n------------------------\n");
-		if(resultado[9] == -1) resp += ("       |  (10) |         ");
-		else resp += ("       |"  + "  " + resultado[9] + "   " +  "|   ");
-		resp += ("\n       x-------x        \n");
-		
-		return resp;
+		return null;
 	}
 }

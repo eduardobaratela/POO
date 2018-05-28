@@ -2,12 +2,16 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Sys" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Digite os numeros"/>
+			<item value="toStrig"/>
+			<item value="Edge"/>
+			<item value="Vertex"/>
 			<item value="Sys"/>
 			<item value="prox"/>
 			<item value="edge++;"/>
@@ -19,9 +23,10 @@
 			<item value="retorno"/>
 			<item value="tabuleiro"/>
 			<item value="atualiza"/>
-			<item value="ctb"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Aresta"/>
+			<item value="Vertice"/>
 			<item value="return true"/>
 			<item value="alt"/>
 			<item value="getmaxY"/>
