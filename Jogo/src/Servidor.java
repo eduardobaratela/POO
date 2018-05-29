@@ -16,34 +16,34 @@ public class Servidor {
 	}
 
     public String tratamento(String args) {
-		String[] a = args.split(" ");
+		String[] inst = args.split(" ");
 	
-		if(a[0].equals("I")){
-			return("Bem vindo usuario " + a[1]);
+		if(inst[0].equals("I")){
+			return("Bem vindo usuario " + inst[1]);
 		}
-		else if(a[0].equals("T")) {
+		else if(inst[0].equals("T")) {
 			String trocas = "";
 			for(int i = 0; i < 5; i ++)
-				trocas += a[i+1];
+				trocas += inst[i+1];
 			dados.rolar(trocas);
 			System.out.print("T : ");
 			return dados.toNumbers();	
 		}
-		else if(a[0].charAt(0) == 'P') {
-            int posicao = Integer.parseInt(a[1]);
-			placar.add(posicao-1, dados.getResult());
+		else if(inst[0].charAt(0) == 'P') {
+            int posicao = Integer.parseInt(inst[1]);
+			placar.add(posicao, dados.getResult());
 			System.out.print("P : ");
 			return ""+placar.getScore();
 		}
-		else if(a[0].charAt(0) == 'R') {
+		else if(inst[0].charAt(0) == 'R') {
 			dados.rolar("11111");
 			
-			if(a[0].length() == 2) System.out.println("Rodada " + a[0].charAt(1));
-			else System.out.println("Rodada " + a[0].charAt(1) + a[0].charAt(2));
+			if(inst[0].length() == 2) System.out.println("Rodada " + inst[0].charAt(1));
+			else System.out.println("Rodada " + inst[0].charAt(1) + inst[0].charAt(2));
 			
 			return dados.toNumbers();
 		}
-		else if(a[0].charAt(0) == 'F') {
+		else if(inst[0].charAt(0) == 'F') {
 			return "Pontuacao final : " + placar.getScore();
 		}
 		else {

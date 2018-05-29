@@ -37,9 +37,11 @@ public class Placar {
 				for(int i=0;i<5;i++){
 					contFull[dados[i] - 1]++;
 				}
-				if(contFull[0] == 3 || contFull[1] == 3 || contFull[2] == 3 || contFull[3] == 3 || contFull[4] == 3) {
-					if(contFull[0] == 2 || contFull[1] == 2 || contFull[2] == 2 || contFull[3] == 2 || contFull[4] == 2)
+				if(contFull[0] == 3 || contFull[1] == 3 || contFull[2] == 3 || contFull[3] == 3 || contFull[4] == 3 || contFull[5] == 3) {
+					if(contFull[0] == 2 || contFull[1] == 2 || contFull[2] == 2 || contFull[3] == 2 || contFull[4] == 2 || contFull[5] == 2) {
+						//System.out.println("ENTROU NO FULLHAND");
 						resultado[6] = 15;
+					}
 					else {
 						//System.out.println("Nao eh um full hand");
 						resultado[6] =0;
@@ -47,7 +49,7 @@ public class Placar {
 				}
 				else {
 					//System.out.println("Nao eh um full hand");
-					resultado[6] =0;;
+					resultado[6] = 0;
 				}
 			}
 			else if(posicao == 8 && resultado[posicao - 1] == -1){//Sequencia
@@ -95,7 +97,7 @@ public class Placar {
 				}
 			}
 			else {
-				System.out.println("Posicao invalida");
+				//System.out.println("Posicao invalida");
 				//throw new java.lang.IllegalArgumentException();
 			}
 		}
